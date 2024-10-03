@@ -1,0 +1,56 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Assets Management System",
+      "description": "An efficient system for managing company assets.",
+      "image": "/images/sample.jpg",
+      "details": "assets-management-system"
+    },
+    {
+      "id": 2,
+      "name": "Ecommerce",
+      "description": "A full-featured ecommerce platform.",
+      "image": "/images/sample.jpg",
+      "details": "ecommerce"
+    },
+    {
+      "id": 3,
+      "name": "Content Management System",
+      "description": "A flexible CMS for managing website content.",
+      "image": "/images/sample.jpg",
+      "details": "content-management-system"
+    },
+    {
+      "id": 4,
+      "name": "Product Management System",
+      "description": "A tool for managing product information and stock.",
+      "image": "/images/sample.jpg",
+      "details": "product-management-system"
+    }
+  ],
+
+  "blogs": [
+    { 
+      "id": 1, 
+      "title": "The Journey of React", 
+      "excerpt": "Exploring the fundamentals of React and why it’s a powerful library...", 
+      "date": "September 15, 2024",
+      "content": "React is a popular JavaScript library for building user interfaces, especially single-page applications. It allows developers to create large web applications that can change data, without reloading the page. The main purpose of React is to be fast, scalable, and simple. It works only on user interfaces in the application. In today’s post, we explore how React evolved over time and why it became so powerful in the web development community..."
+    },
+    { 
+      "id": 2, 
+      "title": "Understanding JavaScript Closures", 
+      "excerpt": "A deep dive into closures, one of the most misunderstood concepts in JavaScript...", 
+      "date": "September 12, 2024",
+      "content": "Closures are a feature in JavaScript where an inner function has access to the outer function's variables. The closure can access variables from three scopes: the own scope, the outer function’s scope, and the global scope. Closures are useful because they allow you to create private variables for a function."
+    }, 
+    { 
+      "id": 3, 
+      "title": "Mastering Asynchronous JavaScript", 
+      "excerpt": "Understanding the complexities of async and await in modern JavaScript...", 
+      "date": "September 10, 2024",
+      "content": "Asynchronous JavaScript allows for more efficient code, especially when dealing with operations such as fetching data from a server. This post explains how promises and async/await can streamline asynchronous code."
+    }
+  ]
+}

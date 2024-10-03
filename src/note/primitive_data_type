@@ -1,0 +1,17 @@
+primitive
+
+- string
+- number
+- boolean
+- null
+- underfined
+
+*** primitive data type is ok in useEffect's dependency array ***
+
+reference
+
+- object - သုံးချင်လျှင် useState or useRefဖြင့် ပြန်အုပ်ပြီး သုံးရမည်။ useRef အသုံးများသည်။(Reactivity ဖြစ်သွားသည်)
+- array -  ။                      ။                       ။
+- function - သုံးချင်လျှင် useCallbackနဲ့ သုံး
+
+*** When you use reference data type in useEffect's dependency array, it will happen infinite loop ***

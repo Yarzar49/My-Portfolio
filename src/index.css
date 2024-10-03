@@ -1,0 +1,22 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer utilities {
+  .shadow-neumorphism {
+    box-shadow: 8px 8px 15px #b0b0b0, -8px -8px 15px #ffffff;
+  }
+  .shadow-neumorphism-active {
+    box-shadow: inset 8px 8px 15px #b0b0b0, inset -8px -8px 15px #ffffff;
+  }
+} */
+
+/* Add dark mode styles */
+html {
+  background-color: #ffffff; /* Light mode background */
+}
+
+.dark html {
+  background-color: #1a1a1a; /* Dark mode background */
+}
