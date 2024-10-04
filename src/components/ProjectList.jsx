@@ -5,7 +5,8 @@ import { NavLink } from 'react-router-dom';
 
 const ProjectList = () => {
 
-    let { data : projects, loading, error }= useFetch('http://localhost:3000/projects');
+    let { data , loading, error }= useFetch('/db.json');
+  
     if (error) {
         return <p>{error}</p>
     }
@@ -19,9 +20,9 @@ const ProjectList = () => {
         }
        <div>
       <h2 className="text-4xl text-center font-bold text-white mb-8">My Projects</h2>
-      {!!projects && (
+      {!!data && (
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-        {projects.map((project) => (
+        {data.projects.map((project) => (
           <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
             <img src={project.image} alt={project.name} className="w-full h-40 object-cover" />
             <div className="p-5">

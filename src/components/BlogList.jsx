@@ -6,7 +6,7 @@ import { useTheme } from '../context/ThemeContext';
 
 const BlogList = () => {
   const { darkMode } = useTheme();
-  let { data: blogs, loading, error } = useFetch('http://localhost:3000/blogs');
+  let { data, loading, error } = useFetch('/db.json');
 
   if (error) {
     return <p>{error}</p>;
@@ -34,9 +34,9 @@ const BlogList = () => {
               Blog Posts
             </h2>
 
-            {!!blogs && (
+            {!!data && (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {blogs.map((blog) => (
+                {data.blogs.map((blog) => (
                   <NavLink
                     key={blog.id}
                     to={`/blog/${blog.id}`}
