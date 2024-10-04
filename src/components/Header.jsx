@@ -6,8 +6,7 @@ import { HiMenu, HiX, HiSun, HiMoon } from 'react-icons/hi'; // Import sun and m
 
 const Header = () => {
   // const [darkMode, setDarkMode] = useState(false);
-  const { id } = useParams();
-  console.log(id);
+
   const { darkMode, toggleDarkMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for the mobile menu
   const location = useLocation(); // Get the current route location

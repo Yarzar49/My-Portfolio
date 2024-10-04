@@ -3,12 +3,16 @@ import useFetch from '../hooks/useFetch';
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
-  let { data: projects, loading, error } = useFetch('http://localhost:3000/projects');
+  let { data, loading, error } = useFetch('/db.json');
 
   if (loading) return <p className="text-center text-gray-600">Loading...</p>;
   if (error) return <p className="text-center text-red-600">{error}</p>;
 
-  const project = projects?.find(project => project.id === projectId);
+  // Convert projectId to a number since the ID in the JSON is a number
+  const projectIdNumber = parseInt(projectId);
+
+  // Access the projects array from the fetched data
+  const project = data?.projects?.find(project => project.id === projectIdNumber);
 
   if (!project) return <h2 className="text-center text-red-600 text-2xl mt-10">Project not found!</h2>;
 

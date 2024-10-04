@@ -1,20 +1,35 @@
 import React from 'react'
 import useFetch from '../hooks/useFetch';
-import ClipLoader from "react-spinners/ClipLoader";
 import { useParams } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 
 const BlogDetails = () => {
-  const { id } = useParams();
-  const { darkMode } = useTheme();
-  let { data : blogs, loading, error }= useFetch('http://localhost:3000/blogs');
-    if (error) {
-        return <p>{error}</p>
-    }
- 
-  const blog = blogs?.find(blog => blog.id ===  id);
+   // Get the blogId from the URL using useParams
+   const { blogId } = useParams();
 
-  if (!blog) return <h2 className="text-center text-red-600 text-2xl mt-10">Blog not found!</h2>;
+   // Get the darkMode value from your useTheme hook (if you're handling dark mode)
+   const { darkMode } = useTheme();
+ 
+   // Fetch the data from db.json using useFetch
+   let { data, loading, error } = useFetch('/db.json');
+ 
+   // Show a loading state while fetching the data
+   if (loading) return <p className="text-center text-gray-600">Loading...</p>;
+ 
+   // Show an error message if something goes wrong
+   if (error) return <p className="text-center text-red-600">{error}</p>;
+ 
+   // Convert blogId to a number since the IDs in db.json are numbers
+   const blogIdNumber = parseInt(blogId);
+ 
+   // Ensure that the blogs array is available before trying to find the blog
+   const blog = data?.blogs?.find(blog => blog.id === blogIdNumber);
+ 
+   // Debugging: Console log the blogId and the blog to check if the match works
+   console.log('blogId:', blogId, 'blog:', blog);
+ 
+   // Handle the case where the blog is not found
+   if (!blog) return <h2 className="text-center text-red-600 text-2xl mt-10">Blog not found!</h2>;
 
   return (
     <section className={`min-h-screen  py-24 px-6 mt-6 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
